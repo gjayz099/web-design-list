@@ -1,0 +1,164 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(75deg, rgba(2,0,36,1) 0%, rgba(55,59,96,1) 46%, rgba(0,212,255,1) 100%);
+}
+.portfolio{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.container{
+    align-items: center;
+}
+.content{
+    text-align: center;
+    padding: 3rem 0;
+    text-transform: uppercase;
+}
+.content h1{
+   color: #fff;
+   font-size: 3rem;
+   font-weight: 800;
+   letter-spacing: .5rem;
+}
+.content h1::after{
+    content: '';
+    width: 99%;
+    height: 3px;
+    background: crimson;
+    display: block;
+}
+.portfolio .myBtnP{
+    /* float: left; */
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 40px;
+}
+.portfolio .myBtnP ul{
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    text-transform: uppercase;
+}
+.portfolio .myBtnP ul li{
+    display: inline-block; 
+    padding: .2rem 1rem;
+    letter-spacing: .2rem;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.3rem; 
+    font-weight: 800;
+    transition: .5s all ease-in-out;
+}
+.portfolio .myBtnP ul li:hover{
+    color: aquamarine;
+}
+.portfolio .myBtnP ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(31,38,31,1) 100%);
+    display: block;
+    margin: auto;
+    transition: .5s all ease-in-out;
+}
+.portfolio .myBtnP ul li:hover:after{
+    width: 100%;
+}
+.portfolio .myBtnP ul li.active{
+    color: aquamarine;
+}
+.all-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: .5s all ease-in-out;
+}
+.all-items .itembox{
+    position: relative;
+    float: left;
+    width: 25.33%;
+    margin: .5rem;
+}
+/* hide class */
+.all-items .itembox.hide{
+    display: none;
+}
+/* show class */
+.all-items .itembox img{
+    filter: grayscale(100%);
+    width: 100%;
+    display: block;   
+}
+.all-items .itembox.show{
+    animation: scal 0.4s ease-in-out;
+}
+/* animation */
+@keyframes scal{
+    0%{
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* Mobile response */
+@media(max-width: 972) and (min-width: 767px){
+    .all-items .itembox{
+        width: 35.50%;
+    }
+}
+@media(max-width: 768px) and (min-width: 576px){
+    .all-items .itembox{
+        width: 52.68%;
+    }
+}
+@media(max-width: 578px){
+    .all-items .itembox{
+        width: 80.50%;
+    }
+    .portfolio .myBtnP ul{
+        padding: 0 1rem;
+    }
+    .content h1{
+        font-size: 2.5rem;
+    }
+}
+/* TEXT OVERLAY */
+.overlay-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: radial-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+    overflow: hidden;
+    width: 0%;
+    height: 100%;
+    transition: .5s ease-in-out;
+}
+.overlay-text h1{
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.all-items .itembox:hover .overlay-text{
+    width: 100%;
+}
